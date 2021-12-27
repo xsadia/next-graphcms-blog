@@ -1,53 +1,71 @@
 import { gql } from "@apollo/client";
-import { GetServerSideProps, GetServerSidePropsContext, NextPage } from "next";
+import {
+  GetServerSideProps,
+  GetServerSidePropsContext,
+  InferGetServerSidePropsType,
+  NextPage,
+} from "next";
 import Head from "next/head";
 import client from "../../../apollo-client";
+import PostList from "../../../components/PostList";
+import PostPreview from "../../../components/PostPreview";
 
-type Post = {
-  title?: string;
-  slug?: string;
-  description?: string;
-  content?: string;
+type Tag = {
+  id: string;
+  subject: string;
 };
 
-const PostsList: NextPage = () => {
+type Post = {
+  title: string;
+  description: string;
+  slug: string;
+  tags: Tag[];
+  createdAt: string;
+};
+
+const PostsListPage = ({
+  posts,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
-    <div>
+    <PostList>
       <Head>
-        <title>FezinPosts</title>
+        <title>Posts</title>
         <meta name="description" content="Posts do fezin" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>Posts</h1>
-    </div>
+      {posts.map((post: Post) => (
+        <PostPreview key={post.slug} post={post} />
+      ))}
+    </PostList>
   );
 };
 
-/* export const getServerSideProps: GetServerSideProps = async (
+export const getServerSideProps: GetServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
   const { data } = await client.query({
     query: gql`
-      query Post($slug: String!) {
-        posts(where: { slug: $slug }) {
+      query Posts {
+        posts {
+          id
           title
-          slug
           description
-          content {
-            text
+          slug
+          tags {
+            id
+            subject
           }
+          createdAt
         }
       }
     `,
-    variables: { slug: context.params },
   });
 
   return {
     props: {
-      post: data.post,
+      posts: data.posts,
     },
   };
 };
-*/
 
-export default PostsList;
+export default PostsListPage;
