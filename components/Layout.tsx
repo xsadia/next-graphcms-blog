@@ -1,21 +1,30 @@
 import { ReactNode } from "react";
+import styled from "styled-components";
+import Footer from "./Footer";
 import Nav from "./Nav";
 
 type LayoutProps = {
   children: ReactNode;
 };
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+`;
+
+const MainContent = styled.main`
+  margin-top: 4rem;
+`;
+
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="flex flex-col h-screen">
-      <header
-        className="
-      h-14 flex items-center bg-sky-500 fixed top-0 z-50 w-screen px-4"
-      >
-        <h1 className="font-semibold text-2xl text-white">Fezin Blogs</h1>
-      </header>
-      <main className="mt-16">{children}</main>
-    </div>
+    <Container>
+      <Nav />
+      <MainContent>{children}</MainContent>
+      <Footer />
+    </Container>
   );
 };
 

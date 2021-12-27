@@ -6,18 +6,18 @@ import {
   NextPage,
 } from "next";
 import Head from "next/head";
-import client from "../../apollo-client";
+import client from "../../../apollo-client";
 
-type Content = {
-  text: string;
-};
+// type Content = {
+//   text: string;
+// };
 
-type Post = {
-  title?: string;
-  slug?: string;
-  description?: string;
-  content?: string;
-};
+// type Post = {
+//   title?: string;
+//   slug?: string;
+//   description?: string;
+//   content?: string;
+// };
 
 const PostPage = ({
   post,
@@ -53,6 +53,8 @@ export const getServerSideProps: GetServerSideProps = async (
     `,
     variables: { slug: context.params?.slug },
   });
+
+  // console.log(context.query);
 
   return {
     props: {

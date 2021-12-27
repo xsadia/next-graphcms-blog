@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 import { GetServerSideProps, GetServerSidePropsContext, NextPage } from "next";
 import Head from "next/head";
-import client from "../../apollo-client";
+import client from "../../../apollo-client";
 
 type Post = {
   title?: string;
