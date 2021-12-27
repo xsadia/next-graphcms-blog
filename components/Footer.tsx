@@ -15,7 +15,7 @@ const FooterContainer = styled.footer`
   padding: 0 1rem;
   height: 40px;
   width: 100vw;
-  background: #ffffff10;
+  background: var(--gray-500);
 `;
 
 const SocialLinksContainer = styled.div`
