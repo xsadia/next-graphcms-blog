@@ -1,7 +1,7 @@
 import Link from "next/link";
+import styled from "styled-components";
 import { ComponentType } from "react";
 import { IconBaseProps } from "react-icons";
-import styled from "styled-components";
 
 type SocialIconProps = {
   icon: ComponentType<IconBaseProps>;
