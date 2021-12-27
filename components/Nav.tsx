@@ -9,6 +9,8 @@ const NavContainer = styled.header`
   width: 100vw;
   align-items: center;
   justify-content: space-between;
+  background-color: rgba(21, 32, 43, 0.75);
+  backdrop-filter: blur(5px);
   padding: 0 1rem;
   border-bottom: 1px solid var(--gray-500);
   box-shadow: 0 2px 10px var(--gray-500);
