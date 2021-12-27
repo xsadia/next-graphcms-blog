@@ -9,13 +9,14 @@ type SocialIconProps = {
 };
 
 const IconContainer = styled.div`
+  cursor: pointer;
   svg {
     font-size: 24px;
     color: #fdfdfd;
     transition: color 0.2s;
 
     &:hover {
-      color: var(--gray-200);
+      color: var(--turquoise-500);
     }
   }
 `;
