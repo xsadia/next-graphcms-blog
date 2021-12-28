@@ -36,6 +36,7 @@ const PostTitleContainer = styled.div`
 `;
 
 const PostTitle = styled.h1`
+  text-transform: capitalize;
   margin: 0;
   font-size: 3rem;
   text-shadow: 0 0 7px var(--turquoise-500), 0 0 10px var(--turquoise-500),

@@ -42,6 +42,7 @@ const TitleContainer = styled.div`
 `;
 
 const PostTitle = styled.h1`
+  text-transform: capitalize;
   cursor: pointer;
   font-size: 1.5rem;
   transition: color 0.2s;
