@@ -11,7 +11,7 @@ const NavContainer = styled.header`
   justify-content: space-between;
   background-color: rgba(21, 32, 43, 0.75);
   backdrop-filter: blur(5px);
-  padding: 0 1rem;
+  padding: 0 2rem;
   border-bottom: 1px solid var(--gray-500);
   box-shadow: 0 2px 10px var(--gray-500);
 `;
@@ -28,7 +28,7 @@ const NavTitle = styled.h1`
 const NavLinkContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-right: 2rem;
+  /* margin-right: 2rem; */
   width: 240px;
   text-shadow: 0 0 7px var(--turquoise-500), 0 0 10px var(--turquoise-500),
     0 0 21px var(--turquoise-500), 0 0 42px var(--turquoise-500),
