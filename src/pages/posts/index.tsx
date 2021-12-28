@@ -6,8 +6,8 @@ import {
 } from "next";
 import Head from "next/head";
 import client from "../../../apollo-client";
-import PostList from "../../../components/PostList";
-import PostPreview from "../../../components/PostPreview";
+import PostList from "../../components/PostList";
+import PostPreview from "../../components/PostPreview";
 
 type Tag = {
   id: string;
