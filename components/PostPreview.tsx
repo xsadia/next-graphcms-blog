@@ -35,7 +35,8 @@ const PostPreviewContainer = styled.div`
 
 const TitleContainer = styled.div`
   display: flex;
-  justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: space-between;
   flex-direction: column;
   width: 720px;
 `;
@@ -58,6 +59,7 @@ const PostTitle = styled.h1`
 const PostDescription = styled.p`
   font-size: 1.2rem;
   color: #bfbfbf;
+  margin: 0;
 `;
 
 const PostDate = styled.h3`
@@ -87,10 +89,12 @@ const PostButtonContainer = styled.div`
 const TagContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 `;
 
 const TagWrapper = styled.div`
   display: flex;
+  margin-top: 0.5rem;
 `;
 
 const Tag = styled.span`
@@ -113,16 +117,17 @@ const PostPreview = ({ post }: PostPreviewProps) => {
 
       <TitleContainer>
         <Link href={`/posts/${post.slug}`}>
-          <TagContainer>
-            <PostTitle>{post.title}</PostTitle>
-            <TagWrapper>
-              {post.tags.map((tag) => (
-                <Tag key={tag.id}>#{tag.subject}</Tag>
-              ))}
-            </TagWrapper>
-          </TagContainer>
+          <PostTitle>{post.title}</PostTitle>
         </Link>
-        <PostDescription>{post.description}</PostDescription>
+
+        <TagContainer>
+          <PostDescription>{post.description}</PostDescription>
+          <TagWrapper>
+            {post.tags.map((tag) => (
+              <Tag key={tag.id}>#{tag.subject}</Tag>
+            ))}
+          </TagWrapper>
+        </TagContainer>
         <Link href={`/posts/${post.slug}`}>
           <PostButtonContainer>
             <span>Ler mais</span>
