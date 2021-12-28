@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
+import { FiArrowRight } from "react-icons/fi";
 
 type Tag = {
   id: string;
@@ -36,7 +37,6 @@ const TitleContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  /* flex: 1; */
   width: 720px;
 `;
 
@@ -63,6 +63,22 @@ const PostDate = styled.h3`
     0 0 102px var(--turquoise-500), 0 0 151px var(--turquoise-500);
 `;
 
+const PostButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 90px;
+  cursor: pointer;
+  color: var(--turquoise-200);
+  transition: text-shadow 0.2s;
+
+  &:hover {
+    text-shadow: 0 0 7px var(--turquoise-500), 0 0 10px var(--turquoise-500),
+      0 0 21px var(--turquoise-500), 0 0 42px var(--turquoise-500),
+      0 0 82px var(--turquoise-500), 0 0 92px var(--turquoise-500),
+      0 0 102px var(--turquoise-500), 0 0 151px var(--turquoise-500);
+  }
+`;
+
 const PostPreview = ({ post }: PostPreviewProps) => {
   return (
     <PostPreviewContainer>
@@ -79,6 +95,12 @@ const PostPreview = ({ post }: PostPreviewProps) => {
           <PostTitle>{post.title}</PostTitle>
         </Link>
         <PostDescription>{post.description}</PostDescription>
+        <Link href={`/posts/${post.slug}`}>
+          <PostButtonContainer>
+            <span>Ler mais</span>
+            <FiArrowRight />
+          </PostButtonContainer>
+        </Link>
       </TitleContainer>
     </PostPreviewContainer>
   );
