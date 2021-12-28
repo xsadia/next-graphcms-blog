@@ -9,7 +9,7 @@ const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 `;
 
 const PostList = ({ children }: PostListProps) => {
