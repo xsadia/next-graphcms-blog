@@ -24,7 +24,7 @@ const PostPreviewContainer = styled.div`
   justify-content: space-around;
   width: 1024px;
   height: 180px;
-  padding: 1rem /* 2rem */;
+  padding: 1rem;
   color: #fff;
 
   & + & {
@@ -117,7 +117,7 @@ const PostPreview = ({ post }: PostPreviewProps) => {
             <PostTitle>{post.title}</PostTitle>
             <TagWrapper>
               {post.tags.map((tag) => (
-                <Tag>#{tag.subject}</Tag>
+                <Tag key={tag.id}>#{tag.subject}</Tag>
               ))}
             </TagWrapper>
           </TagContainer>
