@@ -22,7 +22,21 @@ export default createGlobalStyle`
   }
 
   body {
+    overflow: overlay;
+
     background:#0B132B;
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: none;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--gray-500);
+        border-radius: 16px;
+    }
   }
 
   a {
