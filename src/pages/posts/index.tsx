@@ -45,7 +45,7 @@ export const getServerSideProps: GetServerSideProps = async (
   const { data } = await client.query({
     query: gql`
       query Posts {
-        posts {
+        posts(orderBy: createdAt_DESC) {
           id
           title
           description
