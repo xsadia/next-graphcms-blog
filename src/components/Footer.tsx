@@ -28,14 +28,20 @@ const Footer = () => {
   return (
     <FooterContainer>
       <SocialLinksContainer>
-        <SocialIcon target="https://github.com/xsadia" icon={AiOutlineGithub} />
+        <SocialIcon
+          target="https://github.com/xsadia"
+          icon={AiOutlineGithub}
+          title="github"
+        />
         <SocialIcon
           target="https://www.linkedin.com/in/felipe-arthur-s-b45a5b196/"
           icon={AiFillLinkedin}
+          title="linkedin"
         />
         <SocialIcon
           target="https://twitter.com/felps11"
           icon={AiOutlineTwitter}
+          title="twitter"
         />
       </SocialLinksContainer>
     </FooterContainer>

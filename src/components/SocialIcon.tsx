@@ -6,6 +6,7 @@ import { IconBaseProps } from "react-icons";
 type SocialIconProps = {
   icon: ComponentType<IconBaseProps>;
   target: string;
+  title: string;
 };
 
 const IconContainer = styled.div`
@@ -21,9 +22,9 @@ const IconContainer = styled.div`
   }
 `;
 
-const SocialIcon = ({ icon: Icon, target }: SocialIconProps) => {
+const SocialIcon = ({ icon: Icon, target, title }: SocialIconProps) => {
   return (
-    <IconContainer>
+    <IconContainer title={title}>
       <Link href={target}>
         <Icon />
       </Link>
