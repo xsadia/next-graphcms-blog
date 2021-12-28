@@ -23,7 +23,7 @@ const PostPreviewContainer = styled.div`
   display: flex;
   justify-content: space-around;
   width: 1024px;
-  height: 164px;
+  height: 180px;
   padding: 1rem /* 2rem */;
   color: #fff;
 
@@ -44,9 +44,14 @@ const PostTitle = styled.h1`
   cursor: pointer;
   font-size: 1.5rem;
   transition: color 0.2s;
+  transition: text-shadow 0.2s;
 
   &:hover {
-    color: #808080;
+    color: var(--turquoise-200);
+    text-shadow: 0 0 7px var(--turquoise-500), 0 0 10px var(--turquoise-500),
+      0 0 21px var(--turquoise-500), 0 0 42px var(--turquoise-500),
+      0 0 82px var(--turquoise-500), 0 0 92px var(--turquoise-500),
+      0 0 102px var(--turquoise-500), 0 0 151px var(--turquoise-500);
   }
 `;
 
@@ -79,6 +84,22 @@ const PostButtonContainer = styled.div`
   }
 `;
 
+const TagContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const TagWrapper = styled.div`
+  display: flex;
+`;
+
+const Tag = styled.span`
+  color: var(--turquoise-200);
+  & + & {
+    margin-left: 0.5rem;
+  }
+`;
+
 const PostPreview = ({ post }: PostPreviewProps) => {
   return (
     <PostPreviewContainer>
@@ -92,7 +113,14 @@ const PostPreview = ({ post }: PostPreviewProps) => {
 
       <TitleContainer>
         <Link href={`/posts/${post.slug}`}>
-          <PostTitle>{post.title}</PostTitle>
+          <TagContainer>
+            <PostTitle>{post.title}</PostTitle>
+            <TagWrapper>
+              {post.tags.map((tag) => (
+                <Tag>#{tag.subject}</Tag>
+              ))}
+            </TagWrapper>
+          </TagContainer>
         </Link>
         <PostDescription>{post.description}</PostDescription>
         <Link href={`/posts/${post.slug}`}>
