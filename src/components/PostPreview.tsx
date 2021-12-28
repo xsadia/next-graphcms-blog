@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 import { FiArrowRight } from "react-icons/fi";
+import { useEffect, useState } from "react";
 
 type Tag = {
   id: string;
@@ -27,6 +28,11 @@ const PostPreviewContainer = styled.div`
   padding: 1rem;
   color: #fff;
 
+  @media (max-width: 480px) {
+    width: 300px;
+    height: 120px;
+  }
+
   & + & {
     margin-top: 0.5rem;
     border-top: 1px solid var(--turquoise-500);
@@ -48,6 +54,10 @@ const PostTitle = styled.h1`
   transition: color 0.2s;
   transition: text-shadow 0.2s;
 
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
+
   &:hover {
     color: var(--turquoise-200);
     text-shadow: 0 0 7px var(--turquoise-500), 0 0 10px var(--turquoise-500),
@@ -61,10 +71,19 @@ const PostDescription = styled.p`
   font-size: 1.2rem;
   color: #bfbfbf;
   margin: 0;
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const PostDate = styled.h3`
   margin-right: 0.5rem;
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
+
   text-shadow: 0 0 7px var(--turquoise-500), 0 0 10px var(--turquoise-500),
     0 0 21px var(--turquoise-500), 0 0 42px var(--turquoise-500),
     0 0 82px var(--turquoise-500), 0 0 92px var(--turquoise-500),
@@ -78,6 +97,11 @@ const PostButtonContainer = styled.div`
   cursor: pointer;
   color: var(--turquoise-200);
   transition: text-shadow 0.2s;
+
+  @media (max-width: 480px) {
+    font-size: 0.6rem;
+    width: 54px;
+  }
 
   &:hover {
     text-shadow: 0 0 7px var(--turquoise-500), 0 0 10px var(--turquoise-500),
@@ -101,17 +125,35 @@ const TagWrapper = styled.div`
 const Tag = styled.span`
   text-transform: lowercase;
   color: var(--turquoise-200);
+
+  @media (max-width: 480px) {
+    font-size: 0.6rem;
+  }
+
   & + & {
     margin-left: 0.5rem;
   }
 `;
 
 const PostPreview = ({ post }: PostPreviewProps) => {
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 480);
+  };
+
+  useEffect(() => {
+    if (window !== undefined) {
+      setIsMobile(window.innerWidth <= 480);
+      window.addEventListener("resize", handleResize);
+    }
+  }, []);
+
   return (
     <PostPreviewContainer>
       <PostDate>
         {new Intl.DateTimeFormat("pt-BR", {
-          month: "long",
+          month: isMobile ? "2-digit" : "long",
           day: "2-digit",
           year: "numeric",
         }).format(new Date(post.createdAt))}

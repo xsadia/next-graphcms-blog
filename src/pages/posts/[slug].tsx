@@ -3,22 +3,10 @@ import {
   GetServerSideProps,
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
-  NextPage,
 } from "next";
 import Head from "next/head";
 import client from "../../../apollo-client";
 import Post from "../../components/Post";
-
-// type Content = {
-//   text: string;
-// };
-
-// type Post = {
-//   title?: string;
-//   slug?: string;
-//   description?: string;
-//   content?: string;
-// };
 
 const PostPage = ({
   post,
