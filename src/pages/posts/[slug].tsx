@@ -7,6 +7,7 @@ import {
 } from "next";
 import Head from "next/head";
 import client from "../../../apollo-client";
+import Post from "../../components/Post";
 
 // type Content = {
 //   text: string;
@@ -23,15 +24,14 @@ const PostPage = ({
   post,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
-    <div>
+    <>
       <Head>
         <title>{post.title}</title>
         <meta name="description" content={post.description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>{post.title}</h1>
-      <main>{post.content.text}</main>
-    </div>
+      <Post post={post} />
+    </>
   );
 };
 
@@ -46,8 +46,9 @@ export const getServerSideProps: GetServerSideProps = async (
           slug
           description
           content {
-            text
+            html
           }
+          createdAt
         }
       }
     `,

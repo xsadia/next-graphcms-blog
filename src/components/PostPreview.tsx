@@ -98,6 +98,7 @@ const TagWrapper = styled.div`
 `;
 
 const Tag = styled.span`
+  text-transform: lowercase;
   color: var(--turquoise-200);
   & + & {
     margin-left: 0.5rem;
