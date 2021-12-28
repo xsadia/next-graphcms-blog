@@ -28,7 +28,6 @@ const NavTitle = styled.h1`
 const NavLinkContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  /* margin-right: 2rem; */
   width: 240px;
   text-shadow: 0 0 7px var(--turquoise-500), 0 0 10px var(--turquoise-500),
     0 0 21px var(--turquoise-500), 0 0 42px var(--turquoise-500),
@@ -42,7 +41,7 @@ const NavLink = styled.a`
   transition: color 0.2s;
 
   &:hover {
-    color: #bfbdbd;
+    color: var(--turquoise-200);
   }
 `;
 
@@ -50,7 +49,7 @@ const Nav = () => {
   return (
     <NavContainer className="h-14 flex items-center fixed">
       <Link href="/posts">
-        <NavTitle>Fezin blogs</NavTitle>
+        <NavTitle>Felipe Rosa</NavTitle>
       </Link>
       <NavLinkContainer>
         <Link href="/posts">
