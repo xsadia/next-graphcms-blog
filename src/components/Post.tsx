@@ -52,6 +52,19 @@ const PostDescription = styled.h3`
 const PostContent = styled.main`
   text-align: justify;
   width: 1024px;
+
+  @media (max-width: 1024px) {
+    width: 864px;
+  }
+
+  @media (max-width: 768px) {
+    width: 640px;
+  }
+
+  @media (max-width: 480px) {
+    width: 300px;
+  }
+
   p {
     font-size: 1.1rem;
   }
@@ -76,7 +89,7 @@ const PostContent = styled.main`
 const BackButton = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 72px;
+  width: 76px;
   cursor: pointer;
   color: var(--turquoise-200);
   align-self: start;
@@ -95,7 +108,7 @@ const Post = ({ post }: PostProps) => {
     <PostContainer>
       <PostTitleContainer>
         <span>
-          {new Intl.DateTimeFormat("pt-BR", {
+          {new Intl.DateTimeFormat("en-US", {
             month: "long",
             day: "2-digit",
             year: "numeric",
@@ -106,7 +119,7 @@ const Post = ({ post }: PostProps) => {
         <Link href="/posts">
           <BackButton>
             <FiArrowLeft />
-            <span>voltar</span>
+            <span>Go back</span>
           </BackButton>
         </Link>
       </PostTitleContainer>

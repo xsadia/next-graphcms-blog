@@ -164,7 +164,7 @@ const PostPreview = ({ post }: PostPreviewProps) => {
   return (
     <PostPreviewContainer>
       <PostDate>
-        {new Intl.DateTimeFormat("pt-BR", {
+        {new Intl.DateTimeFormat("en-US", {
           month: isMobile ? "2-digit" : "long",
           day: "2-digit",
           year: "numeric",
@@ -186,7 +186,7 @@ const PostPreview = ({ post }: PostPreviewProps) => {
         </TagContainer>
         <Link href={`/posts/${post.slug}`}>
           <PostButtonContainer>
-            <span>Ler mais</span>
+            <span>Read more</span>
             <FiArrowRight />
           </PostButtonContainer>
         </Link>
