@@ -45,6 +45,10 @@ const PostTitle = styled.h1`
     0 0 102px var(--turquoise-500), 0 0 151px var(--turquoise-500);
 `;
 
+const PostDescription = styled.h3`
+  color: var(--turquoise-200);
+`;
+
 const PostContent = styled.main`
   text-align: justify;
   width: 1024px;
@@ -98,6 +102,7 @@ const Post = ({ post }: PostProps) => {
           }).format(new Date(post.createdAt))}
         </span>
         <PostTitle>{post.title}</PostTitle>
+        <PostDescription>{post.description}</PostDescription>
         <Link href="/posts">
           <BackButton>
             <FiArrowLeft />
