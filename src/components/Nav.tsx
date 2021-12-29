@@ -64,7 +64,7 @@ const Nav = () => {
   return (
     <NavContainer className="h-14 flex items-center fixed">
       <Link href="/posts">
-        <NavTitle>Felipe Rosa</NavTitle>
+        <NavTitle>Felipe R.</NavTitle>
       </Link>
 
       <NavLinkContainer>

@@ -28,6 +28,14 @@ const PostPreviewContainer = styled.div`
   padding: 1rem;
   color: #fff;
 
+  @media (max-width: 1024px) {
+    width: 864px;
+  }
+
+  @media (max-width: 768px) {
+    width: 640px;
+  }
+
   @media (max-width: 480px) {
     width: 300px;
     height: 120px;
@@ -45,6 +53,10 @@ const TitleContainer = styled.div`
   justify-content: space-between;
   flex-direction: column;
   width: 720px;
+
+  @media (max-width: 768px) {
+    width: 480px;
+  }
 `;
 
 const PostTitle = styled.h1`
