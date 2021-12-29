@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
+import { useState } from "react";
 
 const NavContainer = styled.header`
   position: fixed;
@@ -19,6 +20,11 @@ const NavContainer = styled.header`
 const NavTitle = styled.h1`
   cursor: pointer;
   color: #fff;
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
+
   text-shadow: 0 0 7px var(--turquoise-500), 0 0 10px var(--turquoise-500),
     0 0 21px var(--turquoise-500), 0 0 42px var(--turquoise-500),
     0 0 82px var(--turquoise-500), 0 0 92px var(--turquoise-500),
@@ -29,6 +35,11 @@ const NavLinkContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 240px;
+
+  @media (max-width: 480px) {
+    width: 35%;
+  }
+
   text-shadow: 0 0 7px var(--turquoise-500), 0 0 10px var(--turquoise-500),
     0 0 21px var(--turquoise-500), 0 0 42px var(--turquoise-500),
     0 0 82px var(--turquoise-500), 0 0 92px var(--turquoise-500),
@@ -39,6 +50,10 @@ const NavLink = styled.a`
   color: #fff;
   font-size: 1.5rem;
   transition: color 0.2s;
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
 
   &:hover {
     color: var(--turquoise-200);
@@ -51,6 +66,7 @@ const Nav = () => {
       <Link href="/posts">
         <NavTitle>Felipe Rosa</NavTitle>
       </Link>
+
       <NavLinkContainer>
         <Link href="/posts">
           <NavLink>Blog</NavLink>
