@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Link from "next/link";
-import { useState } from "react";
 
 const NavContainer = styled.header`
   position: fixed;
@@ -22,7 +21,7 @@ const NavTitle = styled.h1`
   color: #fff;
 
   @media (max-width: 480px) {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 
   text-shadow: 0 0 7px var(--turquoise-500), 0 0 10px var(--turquoise-500),
