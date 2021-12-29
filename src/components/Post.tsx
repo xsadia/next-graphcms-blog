@@ -69,6 +69,19 @@ const PostContent = styled.main`
     font-size: 1.1rem;
   }
 
+  a {
+    text-decoration: underline;
+    text-shadow: 0 0 7px var(--turquoise-500), 0 0 10px var(--turquoise-500),
+      0 0 21px var(--turquoise-500), 0 0 42px var(--turquoise-500),
+      0 0 82px var(--turquoise-500), 0 0 92px var(--turquoise-500),
+      0 0 102px var(--turquoise-500), 0 0 151px var(--turquoise-500);
+    transition: color 0.2s ease-in;
+
+    &:hover {
+      color: var(--turquoise-200);
+    }
+  }
+
   h1,
   h2,
   h3,
