@@ -28,7 +28,7 @@ const PostsListPage = ({
   return (
     <PostList>
       <Head>
-        <title>Posts</title>
+        <title>Felipe R. | Posts</title>
         <meta name="description" content="Posts do fezin" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

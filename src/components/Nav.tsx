@@ -63,7 +63,7 @@ const NavLink = styled.a`
 const Nav = () => {
   return (
     <NavContainer className="h-14 flex items-center fixed">
-      <Link href="/posts">
+      <Link href="/">
         <NavTitle>Felipe R.</NavTitle>
       </Link>
 
