@@ -36,7 +36,7 @@ const NavLinkContainer = styled.div`
   width: 240px;
 
   @media (max-width: 480px) {
-    width: 35%;
+    width: 40%;
   }
 
   text-shadow: 0 0 7px var(--turquoise-500), 0 0 10px var(--turquoise-500),
@@ -51,7 +51,7 @@ const NavLink = styled.a`
   transition: color 0.2s;
 
   @media (max-width: 480px) {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   &:hover {
