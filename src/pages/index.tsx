@@ -1,8 +1,7 @@
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
-import client from "../../apollo-client";
-import { gql } from "@apollo/client";
 import styled from "styled-components";
+import useTypewriter from "../hooks/useTypeWriter";
 
 type Post = {
   title?: string;
@@ -15,48 +14,112 @@ type PageProps = {
   posts: Array<Post>;
 };
 
-const WorkInProgress = styled.h1`
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+`;
+
+const Introduction = styled.div`
+  max-width: 510px;
+`;
+
+const HiddenText = styled.span`
+  opacity: 0;
+  user-select: none;
+`;
+
+const TypeWriter = styled.span`
+  font-size: 2rem;
   color: #fff;
+  white-space: pre-wrap;
   text-shadow: 0 0 7px var(--turquoise-500), 0 0 10px var(--turquoise-500),
     0 0 21px var(--turquoise-500), 0 0 42px var(--turquoise-500),
     0 0 82px var(--turquoise-500), 0 0 92px var(--turquoise-500),
     0 0 102px var(--turquoise-500), 0 0 151px var(--turquoise-500);
+
+  border-right: 2px solid var(--turquoise-200);
+
+  animation: typing 3.5s steps(30, end), blink-caret 0.8s step-end infinite;
+
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: var(--turquoise-200);
+    }
+  }
 `;
 
-const Home: NextPage<PageProps> = ({ posts }) => {
+const IntroductionTextContainer = styled.div`
+  height: 240px;
+  width: 768px;
+  margin-top: 1.5rem;
+`;
+
+const IntroductionText = styled.p`
+  color: #fff;
+  font-size: 1.5rem;
+
+  a {
+    text-decoration: underline;
+    text-shadow: 0 0 7px var(--turquoise-500), 0 0 10px var(--turquoise-500),
+      0 0 21px var(--turquoise-500), 0 0 42px var(--turquoise-500),
+      0 0 82px var(--turquoise-500), 0 0 92px var(--turquoise-500),
+      0 0 102px var(--turquoise-500), 0 0 151px var(--turquoise-500);
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--turquoise-200);
+    }
+  }
+
+  strong {
+    text-shadow: 0 0 7px var(--turquoise-500), 0 0 10px var(--turquoise-500),
+      0 0 21px var(--turquoise-500), 0 0 42px var(--turquoise-500),
+      0 0 82px var(--turquoise-500), 0 0 92px var(--turquoise-500),
+      0 0 102px var(--turquoise-500), 0 0 151px var(--turquoise-500);
+  }
+`;
+
+const Home: NextPage<PageProps> = () => {
+  const [textTyped, textToType] = useTypewriter(
+    "Hello, World! I'm Felipe Rosa, a passionate developer.",
+    { "!": 500, ",": 200 }
+  );
+
   return (
-    <div className="flex justify-center items-center bg-indigo-800 my-8 hover:bg-indigo-600 ">
+    <Container>
       <Head>
         <title>Felipe R.</title>
         <meta name="description" content="Blog do fezin" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <WorkInProgress>Work in progress...</WorkInProgress>
-    </div>
+      <Introduction>
+        <TypeWriter>{textTyped}</TypeWriter>
+        <HiddenText>{textToType}</HiddenText>
+      </Introduction>
+      <IntroductionTextContainer>
+        <IntroductionText>
+          I'm a developer from Brazil working mostly with{" "}
+          <strong>javascript</strong> but, I'm also interested in several
+          technologies, such as Go, GraphQL, functional programming, but I
+          mostly build stuff using <strong>node</strong>,{" "}
+          <strong>typescript</strong>, <strong>mongodb</strong> and{" "}
+          <strong>react</strong>. I'm currently studying computer engineering at{" "}
+          <a href="https://en.wikipedia.org/wiki/Federal_University_of_Santa_Catarina">
+            UFSC
+          </a>
+          . Feel free to contact me on any social media listed on the footer of
+          this page 🙂.
+        </IntroductionText>
+      </IntroductionTextContainer>
+    </Container>
   );
 };
-
-// export const getServerSideProps: GetServerSideProps = async () => {
-//   const { data } = await client.query({
-//     query: gql`
-//       query Posts {
-//         posts {
-//           title
-//           slug
-//           description
-//           content {
-//             text
-//           }
-//         }
-//       }
-//     `,
-//   });
-
-//   return {
-//     props: {
-//       posts: data.posts,
-//     },
-//   };
-// };
 
 export default Home;
