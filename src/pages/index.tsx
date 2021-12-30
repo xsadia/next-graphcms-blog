@@ -59,6 +59,7 @@ const IntroductionTextContainer = styled.div`
   height: 240px;
   width: 768px;
   margin-top: 1.5rem;
+  text-align: justify;
 `;
 
 const IntroductionText = styled.p`
@@ -107,10 +108,11 @@ const Home: NextPage<PageProps> = () => {
         <IntroductionText>
           I'm a developer from Brazil working mostly with{" "}
           <strong>javascript</strong> but, I'm also interested in several
-          technologies, such as Go, GraphQL, functional programming, but I
-          mostly build stuff using <strong>node</strong>,{" "}
-          <strong>typescript</strong>, <strong>mongodb</strong> and{" "}
-          <strong>react</strong>. I'm currently studying computer engineering at{" "}
+          technologies, such as <strong>Go</strong>, <strong>GraphQL</strong>,{" "}
+          <strong>functional programming</strong>, but I mostly build stuff
+          using <strong>node</strong>, <strong>typescript</strong>,{" "}
+          <strong>mongodb</strong> and <strong>react</strong>. I'm currently
+          studying computer engineering at{" "}
           <a href="https://en.wikipedia.org/wiki/Federal_University_of_Santa_Catarina">
             UFSC
           </a>
