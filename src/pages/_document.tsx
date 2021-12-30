@@ -41,8 +41,16 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt">
         <Head>
-          <title>Felipe R.</title>
           <meta charSet="utf-8" />
+          <meta property="og:site_name" content="feliperosa.dev" />
+          <meta property="og:title" content="Felipe Rosa" />
+          <meta property="og:description" content="portfolio" />
+          <meta
+            property="og:image"
+            itemProp="image"
+            content="../../public/penguin.png"
+          />
+          <meta property="og:type" content="website" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
