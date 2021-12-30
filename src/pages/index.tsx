@@ -1,18 +1,6 @@
-import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import styled from "styled-components";
 import useTypewriter from "../hooks/useTypeWriter";
-
-type Post = {
-  title?: string;
-  slug?: string;
-  description?: string;
-  content?: string;
-};
-
-type PageProps = {
-  posts: Array<Post>;
-};
 
 const Container = styled.div`
   display: flex;
@@ -87,7 +75,7 @@ const IntroductionText = styled.p`
   }
 `;
 
-const Home: NextPage<PageProps> = () => {
+const Home = () => {
   const [textTyped, textToType] = useTypewriter(
     "Hello, World! I'm Felipe Rosa, a passionate developer.",
     { "!": 500, ",": 200 }
