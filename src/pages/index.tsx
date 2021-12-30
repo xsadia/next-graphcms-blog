@@ -106,13 +106,13 @@ const Home: NextPage<PageProps> = () => {
       </Introduction>
       <IntroductionTextContainer>
         <IntroductionText>
-          I'm a developer from Brazil working mostly with{" "}
-          <strong>javascript</strong> but, I'm also interested in several
+          I&apos;m a developer from Brazil working mostly with{" "}
+          <strong>javascript</strong> but, I&apos;m also interested in several
           technologies, such as <strong>Go</strong>, <strong>GraphQL</strong>,{" "}
           <strong>functional programming</strong>, but I mostly build stuff
           using <strong>node</strong>, <strong>typescript</strong>,{" "}
-          <strong>mongodb</strong> and <strong>react</strong>. I'm currently
-          studying computer engineering at{" "}
+          <strong>mongodb</strong> and <strong>react</strong>. I&apos;m
+          currently studying computer engineering at{" "}
           <a href="https://en.wikipedia.org/wiki/Federal_University_of_Santa_Catarina">
             UFSC
           </a>
