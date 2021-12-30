@@ -48,7 +48,7 @@ export default class MyDocument extends Document {
           <meta
             property="og:image"
             itemProp="image"
-            content="../../public/penguin.png"
+            content="https://ibb.co/k9WQDbY"
           />
           <meta property="og:type" content="website" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
