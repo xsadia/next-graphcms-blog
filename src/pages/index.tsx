@@ -12,6 +12,15 @@ const Container = styled.div`
 
 const Introduction = styled.div`
   max-width: 510px;
+
+  @media (max-width: 768px) {
+    width: 600px;
+  }
+
+  @media (max-width: 480px) {
+    width: 300px;
+    text-align: center;
+  }
 `;
 
 const HiddenText = styled.span`
@@ -27,6 +36,10 @@ const TypeWriter = styled.span`
     0 0 21px var(--turquoise-500), 0 0 42px var(--turquoise-500),
     0 0 82px var(--turquoise-500), 0 0 92px var(--turquoise-500),
     0 0 102px var(--turquoise-500), 0 0 151px var(--turquoise-500);
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
 
   border-right: 2px solid var(--turquoise-200);
 
@@ -44,15 +57,32 @@ const TypeWriter = styled.span`
 `;
 
 const IntroductionTextContainer = styled.div`
-  height: 240px;
+  height: fit-content;
   width: 768px;
+  padding: 0.5rem;
   margin-top: 1.5rem;
   text-align: justify;
+  hyphens: auto;
+  word-spacing: -2px;
+  border-bottom: 2px solid var(--turquoise-200);
+
+  @media (max-width: 768px) {
+    width: 600px;
+  }
+
+  @media (max-width: 480px) {
+    width: 300px;
+  }
 `;
 
 const IntroductionText = styled.p`
   color: #fff;
   font-size: 1.5rem;
+  margin: 0;
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+  }
 
   a {
     text-decoration: underline;
@@ -93,7 +123,7 @@ const Home = () => {
         <HiddenText>{textToType}</HiddenText>
       </Introduction>
       <IntroductionTextContainer>
-        <IntroductionText>
+        <IntroductionText lang="en">
           I&apos;m a developer from Brazil working primarily with{" "}
           <strong>javascript</strong> but, I&apos;m also interested in several
           technologies, such as <strong>Go</strong>, <strong>GraphQL</strong>,{" "}
