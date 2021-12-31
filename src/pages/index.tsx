@@ -106,10 +106,10 @@ const IntroductionText = styled.p`
 `;
 
 const Home = () => {
-  // const [textTyped, textToType] = useTypewriter(
-  //   "Hello, World! I'm Felipe Rosa, a passionate developer.",
-  //   { "!": 500, ",": 200 }
-  // );
+  const [textTyped] = useTypewriter(
+    "Hello, World! I'm Felipe Rosa, a passionate developer.",
+    { "!": 500, ",": 200 }
+  );
 
   return (
     <Container>
@@ -119,8 +119,8 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Introduction>
-        {/* <TypeWriter>{textTyped}</TypeWriter>
-        <HiddenText>{textToType}</HiddenText> */}
+        <TypeWriter>{textTyped}</TypeWriter>
+        {/* <HiddenText>{textToType}</HiddenText> */}
       </Introduction>
       <IntroductionTextContainer>
         <IntroductionText lang="en">
