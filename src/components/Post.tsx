@@ -51,6 +51,8 @@ const PostDescription = styled.h3`
 
 const PostContent = styled.main`
   text-align: justify;
+  hyphens: auto;
+  word-spacing: 0;
   width: 1024px;
 
   @media (max-width: 1024px) {

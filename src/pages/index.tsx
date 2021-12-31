@@ -114,7 +114,7 @@ const Home = () => {
   return (
     <Container>
       <Head>
-        <title>Felipe R.</title>
+        <title>Felipe R. | About</title>
         <meta name="description" content="Blog do fezin" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
