@@ -43,7 +43,7 @@ const TypeWriter = styled.span`
 
   border-right: 2px solid var(--turquoise-200);
 
-  animation: blink-caret 0.8s step-end infinite;
+  animation: typing 3.5s steps(30, end), blink-caret 0.8s step-end infinite;
 
   @keyframes blink-caret {
     from,
@@ -52,6 +52,15 @@ const TypeWriter = styled.span`
     }
     50% {
       border-color: var(--turquoise-200);
+    }
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
     }
   }
 `;
@@ -119,7 +128,9 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Introduction>
-        <TypeWriter>{textTyped}</TypeWriter>
+        <TypeWriter>
+          Hello, World! I'm Felipe Rosa, a passionate developer.
+        </TypeWriter>
         {/* <HiddenText>{textToType}</HiddenText> */}
       </Introduction>
       <IntroductionTextContainer>
