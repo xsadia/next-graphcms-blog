@@ -129,7 +129,7 @@ const Home = () => {
       </Head>
       <Introduction>
         <TypeWriter>
-          Hello, World! I'm Felipe Rosa, a passionate developer.
+          Hello, World! I&aposm Felipe Rosa, a passionate developer.
         </TypeWriter>
         {/* <HiddenText>{textToType}</HiddenText> */}
       </Introduction>
