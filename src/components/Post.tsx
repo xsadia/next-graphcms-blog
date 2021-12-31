@@ -106,6 +106,23 @@ const PostContent = styled.main`
     display: inline-block;
     padding: 0.5rem;
     width: 1024px;
+    font-weight: bold;
+
+    border: 1px solid var(--turquoise-200);
+
+    box-shadow: 5px 5px var(--turquoise-200);
+
+    @media (max-width: 1024px) {
+      width: 864px;
+    }
+
+    @media (max-width: 768px) {
+      width: 640px;
+    }
+
+    @media (max-width: 480px) {
+      width: 300px;
+    }
   }
 `;
 
