@@ -108,7 +108,7 @@ const IntroductionText = styled.p`
 const Home = () => {
   const [textTyped, textToType] = useTypewriter(
     "Hello, World! I'm Felipe Rosa, a passionate developer.",
-    { "!": 500, ",": 200 }
+    { "!": 500 }
   );
 
   return (
