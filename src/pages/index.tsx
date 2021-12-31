@@ -43,7 +43,7 @@ const TypeWriter = styled.span`
 
   border-right: 2px solid var(--turquoise-200);
 
-  animation: typing 3.5s steps(30, end), blink-caret 0.8s step-end infinite;
+  animation: blink-caret 0.8s step-end infinite;
 
   @keyframes blink-caret {
     from,
