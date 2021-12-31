@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styled from "styled-components";
+import Typewriter from "../components/Typewriter";
 import useTypewriter from "../hooks/useTypeWriter";
 
 const Container = styled.div`
@@ -8,52 +9,6 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
-`;
-
-const Introduction = styled.div`
-  max-width: 510px;
-
-  @media (max-width: 768px) {
-    width: 600px;
-  }
-
-  @media (max-width: 480px) {
-    width: 300px;
-    text-align: center;
-  }
-`;
-
-const HiddenText = styled.span`
-  opacity: 0;
-  user-select: none;
-`;
-
-const TypeWriter = styled.span`
-  font-size: 2rem;
-  color: #fff;
-  white-space: pre-wrap;
-  text-shadow: 0 0 7px var(--turquoise-500), 0 0 10px var(--turquoise-500),
-    0 0 21px var(--turquoise-500), 0 0 42px var(--turquoise-500),
-    0 0 82px var(--turquoise-500), 0 0 92px var(--turquoise-500),
-    0 0 102px var(--turquoise-500), 0 0 151px var(--turquoise-500);
-
-  @media (max-width: 480px) {
-    font-size: 1.5rem;
-  }
-
-  border-right: 2px solid var(--turquoise-200);
-
-  animation: blink-caret 0.8s step-end infinite;
-
-  @keyframes blink-caret {
-    from,
-    to {
-      border-color: transparent;
-    }
-    50% {
-      border-color: var(--turquoise-200);
-    }
-  }
 `;
 
 const IntroductionTextContainer = styled.div`
@@ -106,11 +61,6 @@ const IntroductionText = styled.p`
 `;
 
 const Home = () => {
-  const [textTyped, textToType] = useTypewriter(
-    "Hello, World! I'm Felipe Rosa, a passionate developer.",
-    { "!": 500 }
-  );
-
   return (
     <Container>
       <Head>
@@ -118,10 +68,10 @@ const Home = () => {
         <meta name="description" content="Blog do fezin" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Introduction>
-        <TypeWriter>{textTyped}</TypeWriter>
-        <HiddenText>{textToType}</HiddenText>
-      </Introduction>
+      <Typewriter
+        text="Hello, World! I'm Felipe Rosa, a passionate developer."
+        pauses={{ "!": 500 }}
+      />
       <IntroductionTextContainer>
         <IntroductionText lang="en">
           I&apos;m a developer from Brazil working primarily with{" "}
