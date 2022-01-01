@@ -1,5 +1,6 @@
 import { gql } from "@apollo/client";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import Head from "next/head";
 import styled from "styled-components";
 import client from "../../../apollo-client";
 import TagPill from "../../components/TagPill";
@@ -21,6 +22,19 @@ const Container = styled.div`
   width: 1024px;
   height: fit-content;
   margin-bottom: 4rem;
+
+  @media (max-width: 1024px) {
+    width: 864px;
+  }
+
+  @media (max-width: 768px) {
+    width: 640px;
+  }
+
+  @media (max-width: 480px) {
+    width: 300px;
+    height: 120px;
+  }
 `;
 
 const TitleContainer = styled.div`
@@ -43,6 +57,20 @@ const TagsContainer = styled.div`
   align-items: flex-start;
   margin-top: 2rem;
   width: 1024px;
+
+  @media (max-width: 1024px) {
+    width: 864px;
+  }
+
+  @media (max-width: 768px) {
+    width: 640px;
+  }
+
+  @media (max-width: 480px) {
+    width: 300px;
+    height: 120px;
+    font-size: 2rem;
+  }
 `;
 
 const TagPage = ({
@@ -50,6 +78,10 @@ const TagPage = ({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <Container>
+      <Head>
+        <title>Felipe R. | Tags</title>
+        <meta name="description" content="Post tags" />
+      </Head>
       <TitleContainer>
         <Title>Tags</Title>
       </TitleContainer>
