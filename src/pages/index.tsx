@@ -76,9 +76,9 @@ const Home = () => {
         <IntroductionText lang="en">
           I&apos;m a developer from Brazil working primarily with{" "}
           <strong>javascript</strong> but, I&apos;m also interested in several
-          technologies, such as <strong>Go</strong>, <strong>GraphQL</strong>,{" "}
-          <strong>functional programming</strong>. I mostly build stuff using{" "}
-          <strong>node</strong>, <strong>typescript</strong>,{" "}
+          technologies, such as <strong>Go</strong>, <strong>GraphQL</strong>{" "}
+          and <strong>functional programming</strong>. I mostly build stuff
+          using <strong>node</strong>, <strong>typescript</strong>,{" "}
           <strong>mongodb</strong> and <strong>react</strong>. I&apos;m
           currently studying computer engineering at{" "}
           <a href="https://en.wikipedia.org/wiki/Federal_University_of_Santa_Catarina">
