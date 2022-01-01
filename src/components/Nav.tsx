@@ -73,7 +73,7 @@ const Nav = () => {
         <Link href="/">
           <NavLink>About</NavLink>
         </Link>
-        <Link href="#">
+        <Link href="/tags">
           <NavLink>Tags</NavLink>
         </Link>
       </NavLinkContainer>
