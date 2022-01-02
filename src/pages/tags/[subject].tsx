@@ -70,7 +70,7 @@ export const getServerSideProps: GetServerSideProps = async (
       query Tag($subject: String!) {
         tag(where: { subject: $subject }) {
           subject
-          posts {
+          posts(orderBy: createdAt_DESC) {
             id
             title
             description
