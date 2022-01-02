@@ -70,7 +70,7 @@ const Home = () => {
       </Head>
       <Typewriter
         text="Hello, World! I'm Felipe Rosa, a passionate developer."
-        pauses={{ "!": 500 }}
+        pauses={{ "!": 600 }}
       />
       <IntroductionTextContainer>
         <IntroductionText lang="en">
