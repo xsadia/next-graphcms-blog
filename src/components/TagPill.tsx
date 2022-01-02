@@ -38,6 +38,7 @@ const Pill = styled.div`
 const Subject = styled.a`
   font-size: 1.2rem;
   font-weight: bold;
+  text-transform: lowercase;
   color: var(--turquoise-200);
   margin: 0;
 `;
