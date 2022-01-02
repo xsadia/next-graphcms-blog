@@ -43,7 +43,7 @@ const PostPreviewContainer = styled.div`
 
   & + & {
     margin-top: 0.5rem;
-    border-top: 1px solid var(--turquoise-500);
+    border-top: 2px solid var(--turquoise-500);
   }
 `;
 
