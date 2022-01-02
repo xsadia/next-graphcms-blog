@@ -65,7 +65,7 @@ const Home = () => {
     <Container>
       <Head>
         <title>Felipe R. | About</title>
-        <meta name="description" content="Blog do fezin" />
+        <meta name="description" content="About Felipe Rosa" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Typewriter

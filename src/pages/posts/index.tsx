@@ -29,7 +29,7 @@ const PostsListPage = ({
     <PostList>
       <Head>
         <title>Felipe R. | Posts</title>
-        <meta name="description" content="Posts do fezin" />
+        <meta name="description" content="Posts" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {posts.map((post: Post) => (
