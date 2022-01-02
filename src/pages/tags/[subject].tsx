@@ -36,12 +36,15 @@ const Subject = styled.h1`
     0 0 21px var(--turquoise-500), 0 0 42px var(--turquoise-500),
     0 0 82px var(--turquoise-500), 0 0 92px var(--turquoise-500),
     0 0 102px var(--turquoise-500), 0 0 151px var(--turquoise-500);
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
 `;
 
 const PostByTagPage = ({
   tag,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  // console.log(tag);
   return (
     <PostList>
       <Head>
