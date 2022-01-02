@@ -134,9 +134,10 @@ const TagWrapper = styled.div`
   margin-top: 0.5rem;
 `;
 
-const Tag = styled.span`
+const Tag = styled.a`
   text-transform: lowercase;
   color: var(--turquoise-200);
+  transition: text-shadow 0.2s;
 
   @media (max-width: 480px) {
     font-size: 0.6rem;
@@ -144,6 +145,13 @@ const Tag = styled.span`
 
   & + & {
     margin-left: 0.5rem;
+  }
+
+  &:hover {
+    text-shadow: 0 0 7px var(--turquoise-500), 0 0 10px var(--turquoise-500),
+      0 0 21px var(--turquoise-500), 0 0 42px var(--turquoise-500),
+      0 0 82px var(--turquoise-500), 0 0 92px var(--turquoise-500),
+      0 0 102px var(--turquoise-500), 0 0 151px var(--turquoise-500);
   }
 `;
 
@@ -180,7 +188,9 @@ const PostPreview = ({ post }: PostPreviewProps) => {
           <PostDescription>{post.description}</PostDescription>
           <TagWrapper>
             {post.tags.map((tag) => (
-              <Tag key={tag.id}>#{tag.subject}</Tag>
+              <Link key={tag.id} href={`/tags/${tag.subject}`}>
+                <Tag>#{tag.subject}</Tag>
+              </Link>
             ))}
           </TagWrapper>
         </TagContainer>
