@@ -21,6 +21,8 @@ const PostPage = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.description} />
         <meta name="description" content={post.description} />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Post post={post} />
