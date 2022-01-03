@@ -1,16 +1,19 @@
 import { gql } from "@apollo/client";
 import {
-  GetServerSideProps,
-  GetServerSidePropsContext,
-  InferGetServerSidePropsType,
+  GetStaticPaths,
+  GetStaticProps,
+  GetStaticPropsContext,
+  InferGetStaticPropsType,
 } from "next";
 import Head from "next/head";
 import client from "../../../apollo-client";
 import Post from "../../components/Post";
 
-const PostPage = ({
-  post,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+type PostType = {
+  slug: string;
+};
+
+const PostPage = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Head>
@@ -23,8 +26,28 @@ const PostPage = ({
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (
-  context: GetServerSidePropsContext
+export const getStaticPaths: GetStaticPaths = async () => {
+  const { data } = await client.query({
+    query: gql`
+      query Posts {
+        posts {
+          slug
+        }
+      }
+    `,
+  });
+
+  const paths = data.posts.map((post: PostType) => ({
+    params: {
+      slug: post.slug,
+    },
+  }));
+
+  return { paths, fallback: false };
+};
+
+export const getStaticProps: GetStaticProps = async (
+  context: GetStaticPropsContext
 ) => {
   const { data } = await client.query({
     query: gql`
@@ -42,8 +65,6 @@ export const getServerSideProps: GetServerSideProps = async (
     `,
     variables: { slug: context.params?.slug },
   });
-
-  // console.log(context.query);
 
   return {
     props: {
