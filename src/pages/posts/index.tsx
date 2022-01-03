@@ -82,8 +82,6 @@ export const getServerSideProps: GetServerSideProps = async (
     variables: { skip: Number(context.query?.skip) },
   });
 
-  console.log(context.query.skip);
-
   return {
     props: {
       postsConnection: data.postsConnection,
