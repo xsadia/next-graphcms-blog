@@ -5,6 +5,7 @@ import styled from "styled-components";
 type PaginationProps = {
   hasNextPage: boolean;
   hasPreviousPage: boolean;
+  endpoint: string;
   queryString: string | string[] | undefined;
 };
 
@@ -49,6 +50,7 @@ const Pagination = ({
   hasNextPage,
   hasPreviousPage,
   queryString,
+  endpoint,
 }: PaginationProps) => {
   const router = useRouter();
   return (
@@ -65,7 +67,7 @@ const Pagination = ({
         disabled={!hasNextPage}
         onClick={() =>
           router.push(
-            `/posts?skip=${queryString ? Number(queryString) + 5 : 5}`
+            `/${endpoint}?skip=${queryString ? Number(queryString) + 5 : 5}`
           )
         }
       >

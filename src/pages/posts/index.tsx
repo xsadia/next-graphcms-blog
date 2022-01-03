@@ -32,7 +32,6 @@ const PostsListPage = ({
   postsConnection,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const router = useRouter();
-  console.log("client", router.query.skip);
   return (
     <PostList>
       <Head>
@@ -47,6 +46,7 @@ const PostsListPage = ({
         hasNextPage={postsConnection.pageInfo.hasNextPage}
         hasPreviousPage={postsConnection.pageInfo.hasPreviousPage}
         queryString={router.query.skip}
+        endpoint="posts"
       />
     </PostList>
   );

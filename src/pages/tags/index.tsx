@@ -39,7 +39,6 @@ const Container = styled.div`
 
 const TitleContainer = styled.div`
   width: 100%;
-  /* border-bottom: 2px solid var(--turquoise-200); */
 `;
 
 const Title = styled.h1`
