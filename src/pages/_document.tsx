@@ -44,7 +44,7 @@ export default class MyDocument extends Document {
           <meta charSet="utf-8" />
           <meta property="og:site_name" content="feliperosa.dev" />
           <meta property="og:title" content="Felipe Rosa" />
-          <meta property="og:description" content="portfolio" />
+          <meta property="og:image" content="https://i.imgur.com/ys5UP8b.jpg" />
 
           <meta property="og:type" content="website" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
