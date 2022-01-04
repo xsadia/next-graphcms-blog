@@ -75,7 +75,7 @@ const Home = () => {
       <IntroductionTextContainer>
         <IntroductionText lang="en">
           I&apos;m a developer from Brazil working primarily with{" "}
-          <strong>javascript</strong> but, I&apos;m also interested in several
+          <strong>javascript</strong> but I&apos;m also interested in several
           technologies, such as <strong>Go</strong>, <strong>GraphQL</strong>{" "}
           and <strong>functional programming</strong>. I mostly build stuff
           using <strong>node</strong>, <strong>typescript</strong>,{" "}
