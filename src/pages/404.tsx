@@ -20,7 +20,7 @@ const Message = styled.h1`
 const NotFound = () => {
   return (
     <Container>
-      <Message>404 Page not found :(</Message>
+      <Message>404 - Page not found :(</Message>
     </Container>
   );
 };
