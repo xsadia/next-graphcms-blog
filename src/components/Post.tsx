@@ -33,6 +33,11 @@ const PostTitleContainer = styled.div`
   width: 100%;
   border-bottom: 2px solid var(--turquoise-500);
   padding-bottom: 1rem;
+
+  @media (max-width: 480px) {
+    width: 300px;
+    text-align: center;
+  }
 `;
 
 const PostTitle = styled.h1`
@@ -43,10 +48,17 @@ const PostTitle = styled.h1`
     0 0 21px var(--turquoise-500), 0 0 42px var(--turquoise-500),
     0 0 82px var(--turquoise-500), 0 0 92px var(--turquoise-500),
     0 0 102px var(--turquoise-500), 0 0 151px var(--turquoise-500);
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
 `;
 
 const PostDescription = styled.h3`
   color: var(--turquoise-200);
+  @media (max-width: 480px) {
+    padding: 0 0.5rem;
+  }
 `;
 
 const PostContent = styled.main`
