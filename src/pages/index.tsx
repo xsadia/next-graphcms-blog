@@ -1,7 +1,6 @@
 import Head from "next/head";
 import styled from "styled-components";
 import Typewriter from "../components/Typewriter";
-import useTypewriter from "../hooks/useTypeWriter";
 
 const Container = styled.div`
   display: flex;
